@@ -1,0 +1,23 @@
+     <div class="row">
+       <div class="col-xs-12">
+      {{#if session.isAuthenticated}}
+      
+        {{#link-to 'categories.new' class="btn btn-default" }}add new category {{/link-to}}
+        
+      {{/if}}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+{{#each model as |category|}}
+
+                 {{custom-thumbnail
+                     imageUrl=category.imageUrl
+                     title=category.title
+                     data=category
+                     action='viewDetails'}}
+
+{{else}}
+<h2>no hay categorias</h2>
+{{/each}}
+</div>

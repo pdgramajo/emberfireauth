@@ -1,0 +1,16 @@
+        <div class="row">
+            <p>
+                {{model.title}} <hr>
+                <img src="{{model.imageUrl}}" class="img-responsive img-thumbnail	" alt="">
+            </p>
+            {{#each model.drinks as |drink|}}
+            
+                 {{!custom-thumbnail 
+                 title=drink.name
+                 imageUrl= drink.imageUrl
+                 data=drink 
+                 action='viewDetails'}}
+            
+            {{/each}}
+        </div>
+{{outlet}}

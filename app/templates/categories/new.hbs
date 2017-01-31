@@ -1,0 +1,11 @@
+<form>
+  <div class="form-group">
+    <label for="title">Email address</label>
+    {{input value=title class="form-control" type="text" }}
+  </div>
+  <div class="form-group">
+		    <label for="exampleInputImage">Image</label>
+		   {{img-upload name="files" multiple=false action=(action "selectedFiles") alt="Choose a File"}}
+  </div>
+  <button {{action 'saveCategory'}} class="btn btn-default">Submit</button>
+</form>
