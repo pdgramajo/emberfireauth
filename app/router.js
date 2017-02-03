@@ -10,9 +10,11 @@ Router.map(function() {
   this.route('categories',{ path: 'AllCategories' }, function() {
     this.route('new');
     this.route('category', { path: 'Category/:category_id' } ,function() {
-      this.route('drinks', function() {});
     });
   });
+        this.route('drinks', function() {
+        this.route('new');
+      });
 });
 
 export default Router;

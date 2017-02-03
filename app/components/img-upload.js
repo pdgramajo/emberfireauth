@@ -35,7 +35,15 @@ export default Ember.Component.extend({
   resetInput() {
     this.$('.x-file--input').val('');
   },
-
+  /** 
+   * even onchange listen the resetComp to reset from the controller this upload
+   * you need set resetComp  like this: resetComp=resetInputFileComp
+   * resetInputFileComp is a bool property from you controller
+  **/
+   onChange: function () {
+       this.resetInput();
+    }.observes('resetComp'),
+    
   /**
    * Generates a random ID to relate the label to the input.
    *

@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import BaseController from '../../controllers/base-controller';
 
 export default BaseController.extend({
@@ -5,9 +6,7 @@ export default BaseController.extend({
         
         saveCategory(){
             const title = this.get('title');
-            console.log('title=> ',title);
             this.uploadImage().then((url)=>{
-		           
 		             var newCategory = this.get('store').createRecord('category', {
                           title: title,
                           imageUrl:url
@@ -20,7 +19,7 @@ export default BaseController.extend({
                         });
 			        this.set('title','');
 			        this.set('imgFile','');
-            })
+            });
         }
     }
 });
